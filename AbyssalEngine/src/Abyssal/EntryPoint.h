@@ -6,6 +6,8 @@ extern Abyssal::Application* Abyssal::CreateApplication();
 	
 int main(int argc, char** argv)
 {
+	Abyssal::Log::Init();
+	ABYSSAL_CORE_TRACE("Initialized Log!");
 	auto app = Abyssal::CreateApplication();
 	app->Run();
 
