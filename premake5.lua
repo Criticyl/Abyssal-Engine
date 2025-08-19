@@ -11,6 +11,11 @@ workspace "AbyssalEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "AbyssalEngine/vendor/GLFW/include"
+
+include "AbyssalEngine/vendor/GLFW"
+
 project "AbyssalEngine"
 	location "AbyssalEngine"
 	kind "SharedLib"
@@ -18,6 +23,9 @@ project "AbyssalEngine"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "abyssalpch.h"
+	pchsource "AbyssalEngine/src/abyssalpch.cpp"
 
 	files
 	{
@@ -28,7 +36,15 @@ project "AbyssalEngine"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"

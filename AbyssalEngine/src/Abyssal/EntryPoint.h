@@ -3,15 +3,15 @@
 #ifdef ABYSSAL_PLATFORM_WINDOWS
 
 extern Abyssal::Application* Abyssal::CreateApplication();
-	
+    
 int main(int argc, char** argv)
 {
-	Abyssal::Log::Init();
-	ABYSSAL_CORE_TRACE("Initialized Log!");
-	auto app = Abyssal::CreateApplication();
-	app->Run();
+    Abyssal::Log::Init();
+    ABYSSAL_CORE_TRACE("Initialized Log!");
+    auto app = Abyssal::CreateApplication();
+    app->Run();
 
-	delete app;
+    delete app;
 }
 
 #endif

@@ -1,25 +1,32 @@
+#include "abyssalpch.h"
 #include "Application.h"
 
 #include "Abyssal/Events/ApplicationEvent.h"
 #include "Abyssal/Log.h"
 
+#include <GLFW/glfw3.h>
+
 namespace Abyssal {
 
-	Application::Application()
-	{
+    Application::Application()
+    {
+        m_Window = std::unique_ptr<Window>(Window::Create());
+    }
 
-	}
+    Application::~Application()
+    {
 
-	Application::~Application()
-	{
+    }
 
-	}
+    void Application::Run() 
+    {
+        
 
-	void Application::Run() 
-	{
-		WindowResizeEvent e(1280, 720);
-		ABYSSAL_TRACE(e.ToString());
-
-		while (true);
-	}
+        while (m_Running)
+        {
+            glClearColor(1.0, 0.0, 0.5, 1.0);
+            glClear(GL_COLOR_BUFFER_BIT);
+            m_Window->OnUpdate();
+        }
+    }
 }
