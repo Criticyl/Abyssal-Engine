@@ -4,6 +4,9 @@
     <Filter Include="Abyssal">
       <UniqueIdentifier>{B432B17C-2012-3018-292A-BBEE95889679}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Abyssal\Events">
+      <UniqueIdentifier>{184CE4F0-041A-D8F6-EDAD-481DD91AB45B}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Abyssal.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Abyssal\EntryPoint.h">
       <Filter>Abyssal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Abyssal\Events\ApplicationEvent.h">
+      <Filter>Abyssal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Abyssal\Events\Event.h">
+      <Filter>Abyssal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Abyssal\Events\KeyEvents.h">
+      <Filter>Abyssal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Abyssal\Events\MouseEvent.h">
+      <Filter>Abyssal\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Abyssal\Log.h">
       <Filter>Abyssal</Filter>
