@@ -37,6 +37,12 @@
     <ClInclude Include="src\Abyssal\Events\MouseEvent.h">
       <Filter>Abyssal\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Abyssal\Layer.h">
+      <Filter>Abyssal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Abyssal\LayerStack.h">
+      <Filter>Abyssal</Filter>
+    </ClInclude>
     <ClInclude Include="src\Abyssal\Log.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Abyssal\Application.cpp">
+      <Filter>Abyssal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Abyssal\Layer.cpp">
+      <Filter>Abyssal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Abyssal\LayerStack.cpp">
       <Filter>Abyssal</Filter>
     </ClCompile>
     <ClCompile Include="src\Abyssal\Log.cpp">

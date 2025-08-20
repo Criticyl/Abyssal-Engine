@@ -3,7 +3,7 @@
 
 #include "Abyssal/Log.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace Abyssal {
 
@@ -20,12 +20,27 @@ namespace Abyssal {
 
     }
 
+    void Application::PushLayer(Layer* layer)
+    {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer* overlay)
+    {
+        m_LayerStack.PushOverlay(overlay);
+    }
+
     void Application::OnEvent(Event& event)
     {
         EventDispatcher dispatcher(event);
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(OnWindowClosed));
 
-        ABYSSAL_CORE_TRACE("{0}", event.ToString());
+        for (auto iter = m_LayerStack.end(); iter != m_LayerStack.begin(); )
+        {
+            (*--iter)->OnEvent(event);
+            if (event.Handled())
+                break;
+        }
     }
 
     void Application::Run() 
@@ -36,6 +51,10 @@ namespace Abyssal {
         {
             glClearColor(1.0, 0.0, 0.5, 1.0);
             glClear(GL_COLOR_BUFFER_BIT);
+
+            for (Layer* layer : m_LayerStack)
+                layer->OnUpdate();
+
             m_Window->OnUpdate();
         }
     }

@@ -5,6 +5,8 @@
 #include "Abyssal/Events/KeyEvent.h"
 #include "Abyssal/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace Abyssal {
 
     static bool s_GLFWInitialized = false;
@@ -48,6 +50,10 @@ namespace Abyssal {
 
         m_Window = glfwCreateWindow((int)m_WindowData.Width, (int)m_WindowData.Height, m_WindowData.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        ABYSSAL_CORE_ASSERT(status, "Failed to initialize Glad!");
+
         glfwSetWindowUserPointer(m_Window, &m_WindowData);
         SetVSync(true);
 

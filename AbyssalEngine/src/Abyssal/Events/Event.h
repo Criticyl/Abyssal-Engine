@@ -1,5 +1,7 @@
 #pragma once
 
+//#include "abyssalpch.h"
+
 #include "Abyssal/Core.h"
 
 namespace Abyssal {
@@ -42,6 +44,8 @@ namespace Abyssal {
         {
             return GetCategoryFlags() & category;
         }
+
+        inline bool Handled() const { return m_Handled; }
     protected:
         bool m_Handled = false;
     };

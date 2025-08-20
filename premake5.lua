@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "AbyssalEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "AbyssalEngine/vendor/Glad/include"
 
 include "AbyssalEngine/vendor/GLFW"
+include "AbyssalEngine/vendor/Glad"
 
 project "AbyssalEngine"
 	location "AbyssalEngine"
@@ -37,12 +39,14 @@ project "AbyssalEngine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
@@ -57,7 +61,8 @@ project "AbyssalEngine"
 		defines
 		{
 			"ABYSSAL_PLATFORM_WINDOWS",
-			"ABYSSAL_BUILD_DLL"
+			"ABYSSAL_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -67,15 +72,18 @@ project "AbyssalEngine"
 
 		filter "configurations:Debug"
 			defines "ABYSSAL_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "ABYSSAL_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 
 		filter "configurations:Dist"
 			defines "ABYSSAL_DIST"
+			buildoptions "/MD"
 			optimize "On"
 
 project "Sandbox"
@@ -122,13 +130,16 @@ project "Sandbox"
 
 		filter "configurations:Debug"
 			defines "ABYSSAL_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "ABYSSAL_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 
 		filter "configurations:Dist"
 			defines "ABYSSAL_DIST"
+			buildoptions "/MD"
 			optimize "On"
