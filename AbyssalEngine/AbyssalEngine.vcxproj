@@ -161,7 +161,7 @@
     <ClInclude Include="src\Abyssal\EntryPoint.h" />
     <ClInclude Include="src\Abyssal\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Abyssal\Events\Event.h" />
-    <ClInclude Include="src\Abyssal\Events\KeyEvents.h" />
+    <ClInclude Include="src\Abyssal\Events\KeyEvent.h" />
     <ClInclude Include="src\Abyssal\Events\MouseEvent.h" />
     <ClInclude Include="src\Abyssal\Log.h" />
     <ClInclude Include="src\Abyssal\Window.h" />

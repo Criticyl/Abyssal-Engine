@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Abyssal/Events/ApplicationEvent.h"
 #include "Window.h"
 
 namespace Abyssal {
@@ -12,7 +13,11 @@ namespace Abyssal {
         virtual ~Application();
 
         void Run();
+
+        void OnEvent(Event& event);
     private:
+        bool OnWindowClosed(WindowCloseEvent& e);
+
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
     };

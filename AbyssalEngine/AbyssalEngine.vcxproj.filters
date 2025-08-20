@@ -31,7 +31,7 @@
     <ClInclude Include="src\Abyssal\Events\Event.h">
       <Filter>Abyssal\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\Events\KeyEvents.h">
+    <ClInclude Include="src\Abyssal\Events\KeyEvent.h">
       <Filter>Abyssal\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Abyssal\Events\MouseEvent.h">
