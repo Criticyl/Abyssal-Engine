@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "AbyssalEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "AbyssalEngine/vendor/Glad/include"
+IncludeDir["imgui"] = "AbyssalEngine/vendor/imgui"
 
 include "AbyssalEngine/vendor/GLFW"
 include "AbyssalEngine/vendor/Glad"
+include "AbyssalEngine/vendor/imgui"
 
 project "AbyssalEngine"
 	location "AbyssalEngine"
@@ -40,7 +42,8 @@ project "AbyssalEngine"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.imgui}"
 	}
 
 	links
@@ -48,6 +51,7 @@ project "AbyssalEngine"
 		"GLFW",
 		"Glad",
 		"opengl32.lib",
+		"ImGui",
 		"dwmapi.lib"
 	}
 

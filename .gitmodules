@@ -4,3 +4,6 @@
 [submodule "AbyssalEngine/vendor/GLFW"]
 	path = AbyssalEngine/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "AbyssalEngine/vendor/imgui"]
+	path = AbyssalEngine/vendor/imgui
+	url = https://github.com/TheCherno/imgui

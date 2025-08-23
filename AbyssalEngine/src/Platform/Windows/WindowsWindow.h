@@ -20,6 +20,8 @@ namespace Abyssal {
         inline void SetEventCallback(const EventCallbackFunc& callback) override { m_WindowData.EventCallback = callback;  }
         void SetVSync(bool enabled) override;
         bool IsVSync() const override;
+
+        inline virtual void* GetNativeWindow() const { return m_Window; }
     private:
         virtual void Init(const WindowSettings& settings);
         virtual void Shutdown();
