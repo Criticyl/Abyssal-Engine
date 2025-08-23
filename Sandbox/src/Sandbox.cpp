@@ -1,5 +1,7 @@
 #include <Abyssal.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Abyssal::Layer
 {
 public:
@@ -16,6 +18,13 @@ public:
 		}
 	}
 
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World!");
+		ImGui::End();
+	}
+
 	void OnEvent(Abyssal::Event& event) override
 	{
 		ABYSSAL_TRACE("{0}", event.ToString());
@@ -29,7 +38,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Abyssal::ImGuiLayer());
 	}
 
 	~Sandbox()

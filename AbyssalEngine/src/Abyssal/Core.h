@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef ABYSSAL_PLATFORM_WINDOWS
+#if ABYSSAL_DYNAMIC_LINK
     #ifdef ABYSSAL_BUILD_DLL
         #define ABYSSAL_API __declspec(dllexport)
     #else
         #define ABYSSAL_API __declspec(dllimport)
     #endif
+#else
+    #define ABYSSAL_API
+#endif
 #else
     #error Abyssal Engine only supports Windows!
 #endif

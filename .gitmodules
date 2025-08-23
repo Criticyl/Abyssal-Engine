@@ -7,3 +7,6 @@
 [submodule "AbyssalEngine/vendor/imgui"]
 	path = AbyssalEngine/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "AbyssalEngine/vendor/glm"]
+	path = AbyssalEngine/vendor/glm
+	url = https://github.com/g-truc/glm

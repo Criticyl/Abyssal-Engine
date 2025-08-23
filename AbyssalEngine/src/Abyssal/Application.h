@@ -6,6 +6,8 @@
 #include "Abyssal/Events/Event.h"
 #include "Abyssal/Events/ApplicationEvent.h"
 
+#include "Abyssal/ImGui/ImGuiLayer.h"
+
 namespace Abyssal {
     class ABYSSAL_API Application
     {
@@ -29,6 +31,7 @@ namespace Abyssal {
         bool OnWindowClosed(WindowCloseEvent& e);
 
         std::unique_ptr<Window> m_Window;
+        ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
     private:

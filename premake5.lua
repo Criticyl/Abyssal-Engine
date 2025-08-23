@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "AbyssalEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "AbyssalEngine/vendor/Glad/include"
 IncludeDir["imgui"] = "AbyssalEngine/vendor/imgui"
+IncludeDir["glm"] = "AbyssalEngine/vendor/glm"
 
 include "AbyssalEngine/vendor/GLFW"
 include "AbyssalEngine/vendor/Glad"
@@ -22,8 +23,10 @@ include "AbyssalEngine/vendor/imgui"
 
 project "AbyssalEngine"
 	location "AbyssalEngine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+    staticruntime "on"
+    cppdialect "C++20"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -43,8 +46,13 @@ project "AbyssalEngine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}"
 	}
+
+    defines {
+        "_CRT_SECURE_NO_WARNINGS"
+    }
 
 	links
 	{
@@ -52,12 +60,9 @@ project "AbyssalEngine"
 		"Glad",
 		"opengl32.lib",
 		"ImGui",
-		"dwmapi.lib"
 	}
 
 	filter "system:windows"
-		cppdialect "C++20"
-		staticruntime "On"
 		systemversion "latest"
 
 		buildoptions "/utf-8"
@@ -69,31 +74,28 @@ project "AbyssalEngine"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.abspath} \"%{wks.location}/bin/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/Sandbox/\"")
-		}
-
 		filter "configurations:Debug"
 			defines "ABYSSAL_DEBUG"
-			buildoptions "/MDd"
-			symbols "On"
+			runtime "Debug"
+			symbols "on"
 
 		filter "configurations:Release"
 			defines "ABYSSAL_RELEASE"
-			buildoptions "/MD"
-			optimize "On"
+			runtime "Release"
+			optimize "on"
 
 
 		filter "configurations:Dist"
 			defines "ABYSSAL_DIST"
-			buildoptions "/MD"
-			optimize "On"
+			runtime "Release"
+			optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+    cppdialect "C++20"
+    staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -107,7 +109,9 @@ project "Sandbox"
 	includedirs
 	{
 		"AbyssalEngine/vendor/spdlog/include",
-		"AbyssalEngine/src"
+		"AbyssalEngine/src",
+		"AbyssalEngine/vendor",
+		"%{IncludeDir.glm}"
 	}
 
 	dependson
@@ -121,8 +125,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++20"
-		staticruntime "On"
 		systemversion "latest"
 
 		buildoptions "/utf-8"
@@ -134,16 +136,16 @@ project "Sandbox"
 
 		filter "configurations:Debug"
 			defines "ABYSSAL_DEBUG"
-			buildoptions "/MDd"
-			symbols "On"
+			runtime "Debug"
+			symbols "on"
 
 		filter "configurations:Release"
 			defines "ABYSSAL_RELEASE"
-			buildoptions "/MD"
-			optimize "On"
+			runtime "Release"
+			optimize "on"
 
 
 		filter "configurations:Dist"
 			defines "ABYSSAL_DIST"
-			buildoptions "/MD"
-			optimize "On"
+			runtime "Release"
+			optimize "on"

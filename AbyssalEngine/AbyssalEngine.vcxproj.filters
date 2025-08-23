@@ -7,6 +7,9 @@
     <Filter Include="Abyssal\Events">
       <UniqueIdentifier>{184CE4F0-041A-D8F6-EDAD-481DD91AB45B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Abyssal\ImGui">
+      <UniqueIdentifier>{DEDE49F0-4A9F-C526-13DA-0EA47F590A03}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
@@ -37,6 +40,15 @@
     <ClInclude Include="src\Abyssal\Events\MouseEvent.h">
       <Filter>Abyssal\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Abyssal\ImGui\ImGuiLayer.h">
+      <Filter>Abyssal\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Abyssal\Input.h">
+      <Filter>Abyssal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Abyssal\KeyCode.h">
+      <Filter>Abyssal</Filter>
+    </ClInclude>
     <ClInclude Include="src\Abyssal\Layer.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
@@ -46,23 +58,29 @@
     <ClInclude Include="src\Abyssal\Log.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
+    <ClInclude Include="src\Abyssal\MouseButtonCode.h">
+      <Filter>Abyssal</Filter>
+    </ClInclude>
     <ClInclude Include="src\Abyssal\Window.h">
       <Filter>Abyssal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\abyssalpch.h" />
-    <ClInclude Include="src\Abyssal\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\Abyssal\Input.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Abyssal\KeyCode.h" />
-    <ClInclude Include="src\Abyssal\MouseButtonCode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Abyssal\Application.cpp">
       <Filter>Abyssal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Abyssal\ImGui\ImGuiBuild.cpp">
+      <Filter>Abyssal\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Abyssal\ImGui\ImGuiLayer.cpp">
+      <Filter>Abyssal\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Abyssal\Layer.cpp">
       <Filter>Abyssal</Filter>
@@ -73,12 +91,12 @@
     <ClCompile Include="src\Abyssal\Log.cpp">
       <Filter>Abyssal</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\abyssalpch.cpp" />
-    <ClCompile Include="src\Abyssal\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

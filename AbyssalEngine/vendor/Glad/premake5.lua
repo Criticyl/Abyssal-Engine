@@ -1,7 +1,7 @@
 project "Glad"
 	kind "StaticLib"
 	language "C"
-	staticruntime "off"
+	staticruntime "on"
 	warnings "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -21,8 +21,13 @@ project "Glad"
 
 	filter "system:windows"
 		systemversion "latest"
-		staticruntime "On"
+	
+	filter "configurations:Debug"
+		defines "ABYSSAL_DEBUG"
+		runtime "Debug"
+		symbols "on"
 
-		filter "configurations:Release"
-			runtime "Release"
-			buildoptions "/MT"
+	filter "configurations:Release"
+		defines "ABYSSAL_RELEASE"
+		runtime "Release"
+		optimize "on"
