@@ -5,7 +5,7 @@
 #include "Abyssal/Events/KeyEvent.h"
 #include "Abyssal/Events/MouseEvent.h"
 
-#include <glad/glad.h>
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace Abyssal {
 
@@ -49,10 +49,8 @@ namespace Abyssal {
         }
 
         m_Window = glfwCreateWindow((int)m_WindowData.Width, (int)m_WindowData.Height, m_WindowData.Title.c_str(), nullptr, nullptr);
-        glfwMakeContextCurrent(m_Window);
-
-        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-        ABYSSAL_CORE_ASSERT(status, "Failed to initialize Glad!");
+        m_Context = new OpenGLContext(m_Window);
+        m_Context->Init();
 
         glfwSetWindowUserPointer(m_Window, &m_WindowData);
         SetVSync(true);
@@ -156,7 +154,7 @@ namespace Abyssal {
     void WindowsWindow::OnUpdate()
     {
         glfwPollEvents();
-        glfwSwapBuffers(m_Window);
+        m_Context->SwapBuffers();
     }
 
     void WindowsWindow::SetVSync(bool enabled)

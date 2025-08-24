@@ -2,6 +2,8 @@
 
 #include "Abyssal/Window.h"
 
+#include "Abyssal/Renderer/RendererContext.h"
+
 #include <GLFW/glfw3.h>
 
 namespace Abyssal {
@@ -27,6 +29,7 @@ namespace Abyssal {
         virtual void Shutdown();
     private:
         GLFWwindow* m_Window;
+        RendererContext* m_Context;
 
         struct WindowData
         {

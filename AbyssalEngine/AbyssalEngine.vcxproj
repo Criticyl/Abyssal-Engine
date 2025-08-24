@@ -161,7 +161,9 @@
     <ClInclude Include="src\Abyssal\LayerStack.h" />
     <ClInclude Include="src\Abyssal\Log.h" />
     <ClInclude Include="src\Abyssal\MouseButtonCode.h" />
+    <ClInclude Include="src\Abyssal\Renderer\RendererContext.h" />
     <ClInclude Include="src\Abyssal\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\abyssalpch.h" />
@@ -173,6 +175,7 @@
     <ClCompile Include="src\Abyssal\Layer.cpp" />
     <ClCompile Include="src\Abyssal\LayerStack.cpp" />
     <ClCompile Include="src\Abyssal\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\abyssalpch.cpp">
