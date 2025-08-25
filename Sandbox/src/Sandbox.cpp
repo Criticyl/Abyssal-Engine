@@ -11,7 +11,6 @@ public:
 
 	void OnUpdate() override
 	{
-		ABYSSAL_INFO("ExampleLayer::Update");
 		if (Abyssal::Input::IsKeyPressed(static_cast<int>(Abyssal::Key::TAB)))
 		{
 			ABYSSAL_INFO("TAB key is pressed!");
@@ -27,7 +26,7 @@ public:
 
 	void OnEvent(Abyssal::Event& event) override
 	{
-		ABYSSAL_TRACE("{0}", event.ToString());
+
 	}
 
 };
