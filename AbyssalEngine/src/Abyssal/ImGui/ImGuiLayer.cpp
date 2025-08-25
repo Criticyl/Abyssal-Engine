@@ -5,7 +5,7 @@
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 
-#include "Abyssal/Application.h"
+#include "Abyssal/Core/Application.h"
 //TEMP
 #include "GLFW/glfw3.h"
 #include <glad/glad.h>

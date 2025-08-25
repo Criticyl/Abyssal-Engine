@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Abyssal/Log.h"
+#include "Abyssal/Core/Log.h"
 
 #ifdef ABYSSAL_PLATFORM_WINDOWS
     #include <Windows.h>

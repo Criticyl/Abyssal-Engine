@@ -1,12 +1,17 @@
 #pragma once
 
 #include "Core.h"
-#include "Window.h"
-#include "Abyssal/LayerStack.h"
+#include "Abyssal/Window.h"
+#include "Abyssal/Layers/LayerStack.h"
 #include "Abyssal/Events/Event.h"
 #include "Abyssal/Events/ApplicationEvent.h"
 
 #include "Abyssal/ImGui/ImGuiLayer.h"
+
+#include "Abyssal/Renderer/Shader.h"
+#include "Abyssal/Renderer/VertexBuffer.h"
+#include "Abyssal/Renderer/IndexBuffer.h"
+#include "Abyssal/Renderer/BufferLayout.h"
 
 namespace Abyssal {
     class ABYSSAL_API Application
@@ -34,6 +39,12 @@ namespace Abyssal {
         ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
+
+        unsigned int m_VertexArray;
+
+        std::unique_ptr<Shader> m_Shader;
+        std::unique_ptr<VertexBuffer> m_VertexBuffer;
+        std::unique_ptr<IndexBuffer> m_IndexBuffer;
     private:
         static Application* s_Instance;
     };

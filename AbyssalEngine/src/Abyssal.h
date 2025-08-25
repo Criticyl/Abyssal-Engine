@@ -2,16 +2,16 @@
 
 // Not used inside of Abyssal, only for use outside of Abyssal applications.
 
-#include "Abyssal/Application.h"
-#include "Abyssal/Layer.h"
-#include "Abyssal/Log.h"
+#include "Abyssal/Core/Application.h"
+#include "Abyssal/Core/Log.h"
+#include "Abyssal/Layers/Layer.h"
 
-#include "Abyssal/Input.h"
-#include "Abyssal/KeyCode.h"
-#include "Abyssal/MouseButtonCode.h"
+#include "Abyssal/Input/Input.h"
+#include "Abyssal/Input/KeyCode.h"
+#include "Abyssal/Input/MouseButtonCode.h"
 
 #include "Abyssal/ImGui/ImGuiLayer.h"
 
 // ----------[ Entry Point ]----------
-#include "Abyssal/EntryPoint.h"
+#include "Abyssal/Core/EntryPoint.h"
 // -----------------------------------

@@ -19,6 +19,11 @@ namespace Abyssal {
 
         int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
         ABYSSAL_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+        ABYSSAL_CORE_INFO("OpenGL Info:");
+        ABYSSAL_CORE_INFO("   Vendor: {0}", (const char*)glGetString(GL_VENDOR));
+        ABYSSAL_CORE_INFO("   Renderer: {0}", (const char*)glGetString(GL_RENDERER));
+        ABYSSAL_CORE_INFO("   Version: {0}", (const char*)glGetString(GL_VERSION));
     }
 
     void OpenGLContext::SwapBuffers()

@@ -29,7 +29,7 @@ namespace Abyssal {
         virtual void Shutdown();
     private:
         GLFWwindow* m_Window;
-        RendererContext* m_Context;
+        RendererContext* m_Context; // TEMP, move to Renderer or RendererAPI
 
         struct WindowData
         {

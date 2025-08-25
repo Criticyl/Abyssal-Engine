@@ -19,13 +19,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Abyssal.h" />
-    <ClInclude Include="src\Abyssal\Application.h">
+    <ClInclude Include="src\Abyssal\Core\Application.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\Core.h">
+    <ClInclude Include="src\Abyssal\Core\Core.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\EntryPoint.h">
+    <ClInclude Include="src\Abyssal\Core\EntryPoint.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
     <ClInclude Include="src\Abyssal\Events\ApplicationEvent.h">
@@ -43,22 +43,22 @@
     <ClInclude Include="src\Abyssal\ImGui\ImGuiLayer.h">
       <Filter>Abyssal\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\Input.h">
+    <ClInclude Include="src\Abyssal\Input\Input.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\KeyCode.h">
+    <ClInclude Include="src\Abyssal\Input\KeyCode.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\Layer.h">
+    <ClInclude Include="src\Abyssal\Layers\Layer.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\LayerStack.h">
+    <ClInclude Include="src\Abyssal\Layers\LayerStack.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\Log.h">
+    <ClInclude Include="src\Abyssal\Core\Log.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
-    <ClInclude Include="src\Abyssal\MouseButtonCode.h">
+    <ClInclude Include="src\Abyssal\Input\MouseButtonCode.h">
       <Filter>Abyssal</Filter>
     </ClInclude>
     <ClInclude Include="src\Abyssal\Window.h">
@@ -73,9 +73,16 @@
     <ClInclude Include="src\abyssalpch.h" />
     <ClInclude Include="src\Abyssal\Renderer\RendererContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Abyssal\Renderer\Shader.h" />
+    <ClInclude Include="src\Abyssal\Renderer\VertexBuffer.h" />
+    <ClInclude Include="src\Abyssal\Renderer\IndexBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLIndexBuffer.h" />
+    <ClInclude Include="src\Abyssal\Renderer\Renderer.h" />
+    <ClInclude Include="src\Abyssal\Renderer\BufferLayout.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Abyssal\Application.cpp">
+    <ClCompile Include="src\Abyssal\Core\Application.cpp">
       <Filter>Abyssal</Filter>
     </ClCompile>
     <ClCompile Include="src\Abyssal\ImGui\ImGuiBuild.cpp">
@@ -84,13 +91,13 @@
     <ClCompile Include="src\Abyssal\ImGui\ImGuiLayer.cpp">
       <Filter>Abyssal\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Abyssal\Layer.cpp">
+    <ClCompile Include="src\Abyssal\Layers\Layer.cpp">
       <Filter>Abyssal</Filter>
     </ClCompile>
-    <ClCompile Include="src\Abyssal\LayerStack.cpp">
+    <ClCompile Include="src\Abyssal\Layers\LayerStack.cpp">
       <Filter>Abyssal</Filter>
     </ClCompile>
-    <ClCompile Include="src\Abyssal\Log.cpp">
+    <ClCompile Include="src\Abyssal\Core\Log.cpp">
       <Filter>Abyssal</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
@@ -101,5 +108,11 @@
     </ClCompile>
     <ClCompile Include="src\abyssalpch.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Abyssal\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexBuffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLIndexBuffer.cpp" />
+    <ClCompile Include="src\Abyssal\Renderer\IndexBuffer.cpp" />
+    <ClCompile Include="src\Abyssal\Renderer\VertexBuffer.cpp" />
+    <ClCompile Include="src\Abyssal\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>

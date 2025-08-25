@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Abyssal/Core.h"
+#include "Abyssal/Core/Core.h"
 
 namespace Abyssal {
 
